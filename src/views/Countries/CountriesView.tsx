@@ -1,5 +1,5 @@
-export type CountriesViewProps = {};
+export const CountriesView = () => {
+  console.log("here we are");
 
-export const CountriesView = ({}: CountriesViewProps) => {
   return <>CountriesView</>;
 };

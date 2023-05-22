@@ -5,6 +5,7 @@ import { NotFoundView } from "./views/NotFound/NotFoundView";
 import { ContinentsView } from "./views/Continents/ContinentsView";
 import { CountriesView } from "./views/Countries/CountriesView";
 import { CountryView } from "./views/Country/CountryView";
+import { useGetContinentCountriesLoader } from "./hooks/useGetContinentCountriesLoader";
 
 export const router = createBrowserRouter([
   {
@@ -15,18 +16,15 @@ export const router = createBrowserRouter([
       {
         path: "",
         element: <ContinentsView />,
-        children: [
-          {
-            path: "/:id/countries",
-            element: <CountriesView />,
-            children: [
-              {
-                path: "/:id/countries/:id",
-                element: <CountryView />,
-              },
-            ],
-          },
-        ],
+      },
+      {
+        path: "/:code/countries",
+        element: <CountriesView />,
+        loader: useGetContinentCountriesLoader
+      },
+      {
+        path: "/:code/countries/:code",
+        element: <CountryView />,
       },
     ],
   },
