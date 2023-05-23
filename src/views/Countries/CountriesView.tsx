@@ -1,5 +1,9 @@
-export const CountriesView = () => {
-  console.log("here we are");
+import { CountriesList } from "../../components/CountriesList/CountriesList";
 
-  return <>CountriesView</>;
+export const CountriesView = () => {
+  return (
+    <>
+      <CountriesList />
+    </>
+  );
 };

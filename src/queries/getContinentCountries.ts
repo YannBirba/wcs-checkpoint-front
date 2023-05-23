@@ -5,12 +5,9 @@ export const getContinentCountries = gql`
     countries(filter: $filter) {
       name
       code
-      native
       phone
       capital
       currency
-      emoji
-      emojiU
     }
   }
 `;

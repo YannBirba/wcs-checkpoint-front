@@ -10,7 +10,6 @@ export const ContinentItem = ({ continent }: ContinentProps) => {
     <Link to={`/${continent.code}/countries`}>
       <div style={{ display: "flex", gap: "10px" }}>
         <h2>{continent.name}</h2>
-        <p>{continent.code}</p>
       </div>
     </Link>
   );
